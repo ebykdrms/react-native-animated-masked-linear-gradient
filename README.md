@@ -26,7 +26,7 @@ import AnimatedMaskedLinearGradient from 'react-native-animated-masked-linear-gr
 ## Usage Example With All Default Properties
 ```jsx
 <AnimatedMaskedLinearGradient
-  colors={["rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,0255)"]}
+  colors={["rgb(255,0,0)", "rgb(0,255,0)", "rgb(0,0,255)"]}
   connectFirstAndLastColor={true}
   duration={3000}
   style={{}}
@@ -45,5 +45,5 @@ import AnimatedMaskedLinearGradient from 'react-native-animated-masked-linear-gr
 Actually this is just a MaskedView component with LinearGradient component. It works like this:
 - This MaskedView component gets children whose your putted inside and put them to a container View component. 
 - It runs onLayout event of this container View and get this component's width and hight values.
-- It uses this width and hight values on style of 2 LinearGradient components. So, this LinearGradient components gets same size with container View. 
+- It uses this width and hight values on style of 2 LinearGradient components. So, this LinearGradient components get same size with container View. 
 - After then, it looks at direction property (it can be only **"right"** or "left") and it starts an transform: translateY animation using react native Animated API.

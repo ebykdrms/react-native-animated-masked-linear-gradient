@@ -11,7 +11,7 @@ import MaskedView from '@react-native-masked-view/masked-view';
  * @param {object} props - Component attributes
  * @param {any} props.children - Children components
  * @param {array} props.colors - Target colors for LinearGradient component. Default: ["rgb(128,128,128)", "rgb(0,0,0)"]
- * @param {boolean} props.connectFirstAndLastColor - if connectFirstAndLastColor parameter is true then last color and first color will set same value for a better looping animation. Default: true
+ * @param {boolean} props.connectFirstAndLastColors - if connectFirstAndLastColors parameter is true then last color and first color will set same value for a better looping animation. Default: true
  * @param {number} props.duration - duration parameter for Animated.timing() configuration. Default: 3000
  * @param {string} props.directionTo - directionTo parameter must get one of "right" or "left" values. Default: "right"
  * @param {object} props.style - style property for the top component: MaskedView. Note: MaskedView's style property already has { flex: 1 }.
@@ -21,15 +21,15 @@ import MaskedView from '@react-native-masked-view/masked-view';
  */
 const AnimatedMaskedLinearGradient = (props) => {
 
-  const { children, colors, connectFirstAndLastColor, duration, directionTo, style, contentContainerStyle, useNativeDriver } = props;
+  const { children, colors, connectFirstAndLastColors, duration, directionTo, style, contentContainerStyle, useNativeDriver } = props;
 
   const anim = useRef(new Animated.Value(0)).current;
   const [layout, setLayout] = useState(null);
 
-  // if connectFirstAndLastColor parameter is true then
+  // if connectFirstAndLastColors parameter is true then
   // last color and first color will get same value for a better looping animation.
   const colorsArray = useMemo(() => {
-    if (connectFirstAndLastColor) {
+    if (connectFirstAndLastColors) {
       const newColors = [...colors];
       newColors.push(newColors[0]);
       return newColors;
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
 
 AnimatedMaskedLinearGradient.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string),
-  connectFirstAndLastColor: PropTypes.bool,
+  connectFirstAndLastColors: PropTypes.bool,
   duration: PropTypes.number,
   style: PropTypes.object,
   contentContainerStyle: PropTypes.object,
@@ -114,7 +114,7 @@ AnimatedMaskedLinearGradient.propTypes = {
 
 AnimatedMaskedLinearGradient.defaultProps = {
   colors: ["rgb(128,128,128)", "rgb(0,0,0)"],
-  connectFirstAndLastColor: true,
+  connectFirstAndLastColors: true,
   duration: 3000,
   style: {},
   contentContainerStyle: {},
