@@ -1,0 +1,22 @@
+{
+  "name": "react-native-animated-masked-linear-gradient",
+  "version": "1.0.0",
+  "description": "This project provides an animated LinearGradient component whose parent is MaskedView.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "animated",
+    "linear",
+    "gradient",
+    "masked"
+  ],
+  "author": "Emre BÜYÜKDURMUŞ",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "@react-native-masked-view/masked-view": "^0.2.7",
+    "react-native-linear-gradient": "^2.6.2"
+  }
+}
